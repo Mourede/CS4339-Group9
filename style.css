@@ -1,0 +1,176 @@
+
+body {
+    background-color: #f7f1e8;
+    background-image: linear-gradient(90deg, transparent 95%, #d8c7b4 95%);
+    font-size: 17px;
+    margin-top: 25px;
+    margin-right: 45px;
+    margin-bottom: 25px;
+    margin-left: 45px;
+    
+ }
+
+ .page-layout {
+   display: flex;
+   gap: 20px;
+   align-items: flex-start;
+ }
+ aside {
+   width: 200px;
+   min-width: 200px;
+   background-color: #f4eadc;
+   border-style: dashed;
+   border-color: #7b5e57;
+   border-width: 2px;
+   padding: 16px;
+   align-self: flex-start; /* prevents sidebar from stretching full height */
+ }
+ 
+ 
+ 
+ header {
+    background-color: #fffaf0;
+    border-style: double;
+    border-color: #7b5e57;
+    border-width: 4px;
+    margin-bottom: 18px;
+    padding: 15px;
+    display: flex;
+    gap: 24px;
+ }
+ 
+ 
+ h1 {
+    font-size: 36px;
+    font-weight: bold;
+ }
+ 
+ 
+ h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+ }
+ 
+ 
+ nav {
+    background-color: #efe1cf;
+    border-style: dashed;
+    border-color: #7b5e57;
+    border-width: 2px;
+    margin-bottom: 22px;
+    padding: 10px;
+ }
+ 
+ 
+ a:link {
+    color: #5c4033;
+ }
+ 
+ 
+ a:visited {
+    color: #6b4f71;
+ }
+ 
+ 
+ a:hover {
+    color: #ffffff;
+    background-color: #7b5e57;
+ }
+ 
+ 
+ a:active {
+    color: #d6a84f;
+ }
+ 
+ 
+ main {
+    background-color: #fffdf8;
+    border-style: solid;
+    border-color: #b79b7b;
+    border-width: 3px;
+    flex: 1;
+    margin: 0;
+    padding: 20px;
+ }
+ 
+ 
+ img {
+    width: 95px;
+    height: 95px;
+    border-style: ridge;
+    border-color: #7b5e57;
+    border-width: 4px;
+    margin-bottom: 12px;
+ }
+ 
+ 
+ p {
+    margin-bottom: 14px;
+ }
+ 
+ 
+ table {
+    width: 92%;
+    border-style: solid;
+    border-color: #7b5e57;
+    border-width: 2px;
+    margin-bottom: 20px;
+ }
+ 
+ 
+ th,
+ td {
+    border-style: solid;
+    border-color: #c7a98b;
+    border-width: 1px;
+    padding: 7px;
+ }
+ 
+ 
+ ul,
+ ol {
+    margin-bottom: 20px;
+ }
+ 
+ 
+ details {
+    background-color: #f4eadc;
+    border-style: dotted;
+    border-color: #7b5e57;
+    border-width: 2px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding: 8px;
+ }
+ 
+ 
+ summary {
+    font-weight: bold;
+    font-style: italic;
+ }
+ 
+ 
+ input {
+    height: 26px;
+    margin-bottom: 10px;
+ }
+ 
+ 
+ address {
+    font-style: italic;
+    margin-top: 20px;
+ }
+ 
+ 
+ footer {
+    background-color: #fffaf0;
+    border-style: double;
+    border-color: #7b5e57;
+    border-width: 3px;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 20px;
+    padding: 8px;
+ }
+ 
