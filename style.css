@@ -173,27 +173,27 @@ body {
     margin-top: 20px;
     padding: 8px;
  }
- /* box-shadow add a shadow around a section to make it stand out */
+
 main {
-    box-shadow: 4px 4px 10px gray;
+    box-shadow: 4px 4px 10px gray;  /* box-shadow add a shadow around a section to make it stand out */
 }
 
-/* transition change look smoother instead of changing instantly */
+
 a {
-    transition: 0.3s ease;
+    transition: 0.3s ease; /* transition change look smoother instead of changing instantly */
 }
 
-/* transform  change the size or position of an element */
+
 img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* transform  change the size or position of an element */
 }
 
-/* cursor changes how the mouse looks when moving over something */
+
 a:hover {
-    cursor: pointer;
+    cursor: pointer; /* cursor changes how the mouse looks when moving over something */
 }
 
-/* overflow controls what happens if content becomes bigger than the box */
+
 aside {
-    overflow: auto;
+    overflow: auto; /* overflow controls what happens if content becomes bigger than the box */
 }
