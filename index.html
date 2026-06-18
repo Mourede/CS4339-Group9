@@ -21,7 +21,7 @@
 
 </head>
 
-
+<script src="validate.js"></script>
 <body>
 
 
@@ -218,39 +218,40 @@
        <h5>Contact Form</h5>
 
 
-       <form>
-           Name:
-           <input type="text"><br><br>
-
-
-           Email:
-           <input type="email"><br><br>
-
-
-           Phone:
-           <input type="tel"><br><br>
-
-
-           Date:
-           <input type="date"><br><br>
-
-
-           <input type="submit" value="Submit">
+       <!-- ===== Contact Form (Quiz 4) ===== -->
+       <h5>Contact Form</h5>
+ 
+       <form id="contactForm" onsubmit="return false;">
+ 
+           <label for="firstName">First Name:</label>
+           <input type="text" id="firstName" placeholder="Letters only"><br>
+ 
+           <label for="lastName">Last Name:</label>
+           <input type="text" id="lastName" placeholder="Letters only"><br>
+ 
+           <label for="age">Age:</label>
+           <input type="number" id="age" placeholder="1 – 120" min="1" max="120"><br>
+ 
+           <label for="email">Email:</label>
+           <input type="email" id="email" placeholder="name@utdallas.edu"><br>
+ 
+           <input type="submit" value="Submit" onclick="validateForm()">
        </form>
-
-
+ 
+       <!-- Validation result message displayed here -->
+       <div id="formResult"></div>
+ 
    </main>
 </div>
-
-   <!-- address: The address tag contains contact information for the webpage author. -->
+ 
+   <!-- address -->
    <address id="contact">
     Our Email:
     <a href="mailto:dal508265@utdallas.edu">Mourede: dal508265@utdallas.edu</a> |
     <a href="mailto:sxs210515@utdallas.edu">Sambi: sxs210515@utdallas.edu</a> |
-    <a href="mailto:??@utdallas.edu">Hunter: hlm240002@utdallas.edu</a>
+    <a href="mailto:hlm240002@utdallas.edu">Hunter: hlm240002@utdallas.edu</a>
   </address>
-
-
+ 
    <!-- footer: The footer tag contains information placed at the bottom of the webpage. -->
    <footer>
        <p>
