@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 30px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            width: 180px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: lightblue;
+        }
+
+        .matched {
+            background-color: lightgreen;
+            cursor: default;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #score {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Matching Game</h1>
+<p>Match each term with its correct description.</p>
+
+<div class="container">
+    <div class="column" id="leftColumn"></div>
+    <div class="column" id="rightColumn"></div>
+</div>
+
+<div id="score">Matches: 0 / 5</div>
+<div id="message"></div>
+
+<script>
+const pairs = {
+    "find()": "Return value of the first element that satisfies the condition.",
+    "findIndex()": "Return index of the first element that satisfies the condition.",
+    "findLast()": "Return value of the last element that satisfies the condition.",
+    "findLastIndex": "Return index of the last element that satisfies the condition.",
+    "flat()": "Concatenate sub-array elements."
+};
+
+let leftSelection = null;
+let rightSelection = null;
+let matches = 0;
+
+const leftColumn = document.getElementById("leftColumn");
+const rightColumn = document.getElementById("rightColumn");
+
+const leftItems = Object.keys(pairs);
+const rightItems = Object.values(pairs)
+    .sort(() => Math.random() - 0.5);
+
+function createButton(text, side) {
+    const btn = document.createElement("button");
+    btn.textContent = text;
+
+    btn.addEventListener("click", () => {
+        if (btn.classList.contains("matched")) return;
+
+        document.querySelectorAll(`.${side}`)
+            .forEach(b => b.classList.remove("selected"));
+
+        btn.classList.add("selected");
+
+        if (side === "left") {
+            leftSelection = btn;
+        } else {
+            rightSelection = btn;
+        }
+
+        checkMatch();
+    });
+
+    btn.classList.add(side);
+    return btn;
+}
+
+function checkMatch() {
+    if (!leftSelection || !rightSelection) return;
+
+    const leftText = leftSelection.textContent;
+    const rightText = rightSelection.textContent;
+
+    if (pairs[leftText] === rightText) {
+        leftSelection.classList.remove("selected");
+        rightSelection.classList.remove("selected");
+
+        leftSelection.classList.add("matched");
+        rightSelection.classList.add("matched");
+
+        matches++;
+
+        document.getElementById("score").textContent =
+            `Matches: ${matches} / 5`;
+
+        document.getElementById("message").textContent =
+            "Correct Match!";
+
+        if (matches === 5) {
+            document.getElementById("message").textContent =
+                "Congratulations! You matched all pairs!";
+        }
+    } else {
+        document.getElementById("message").textContent =
+            "Incorrect Match. Try Again.";
+    }
+
+    leftSelection = null;
+    rightSelection = null;
+}
+
+leftItems.forEach(item => {
+    leftColumn.appendChild(createButton(item, "left"));
+});
+
+rightItems.forEach(item => {
+    rightColumn.appendChild(createButton(item, "right"));
+});
+</script>
+
+</body>
+</html>
